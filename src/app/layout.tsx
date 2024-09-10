@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import Grid from '@mui/material/Grid2';
 import "./globals.css";
+import HeaderCard from "@/components/cards/headerCard";
+import { Container, ThemeProvider } from "@mui/material";
+import responsiveTheme from "@/components/ui/theme";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,11 +17,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="es">
+      <body>
+        <ThemeProvider theme={responsiveTheme}>
+          <Container maxWidth='lg'>
+            <Grid container sx={{ mt: 4 }} spacing={2}>
+              <Grid size={4}>
+                <HeaderCard />
+              </Grid>
+              <Grid size={8}>
+                {children}
+              </Grid>
+            </Grid>
+          </Container>
+        </ThemeProvider>
       </body>
     </html>
   );
