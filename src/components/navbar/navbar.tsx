@@ -4,6 +4,21 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
 
+const ButtonsItems = [
+    {
+        link: '/',
+        Text: 'Acerca de'
+    },
+    {
+        link: '/profile',
+        Text: 'Perfil'
+    },
+    {
+        link: '/projects',
+        Text: 'Proyectos'
+    }
+]
+
 export default function NavBar() {
     return (
         <Box sx={{
@@ -16,33 +31,18 @@ export default function NavBar() {
             boxShadow: '0px 0px 5px rgba(0, 0, 0, 10)'
         }}>
             <Stack direction="row">
-                <Button
-                    variant="text"
-                    size='large'
-                    component={Link}
-                    href='/'
-                    sx={{ textTransform: 'none' }} // Evita las mayúsculas
-                >
-                    <Typography color='primary.contrastText'>Acerca de</Typography>
-                </Button>
-                <Button
-                    variant="text"
-                    size='large'
-                    component={Link}
-                    href='/cv'
-                    sx={{ textTransform: 'none' }} // Evita las mayúsculas
-                >
-                    <Typography color='primary.contrastText'>CV</Typography>
-                </Button>
-                <Button
-                    variant="text"
-                    size='large'
-                    component={Link}
-                    href='/'
-                    sx={{ textTransform: 'none' }} // Evita las mayúsculas
-                >
-                    <Typography color='primary.contrastText'>Proyects</Typography>
-                </Button>
+                {ButtonsItems.map((button, index) => (
+                    <Button
+                        variant="text"
+                        size='large'
+                        component={Link}
+                        key={index}
+                        href={button.link}
+                        sx={{ textTransform: 'none' }}
+                    >
+                        <Typography color='primary.contrastText'>{button.Text}</Typography>
+                    </Button>
+                ))}
             </Stack>
         </Box>
     )

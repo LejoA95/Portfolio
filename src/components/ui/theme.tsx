@@ -138,6 +138,36 @@ const theme = createTheme({
                     marginRight: '.5em'
                 }
             }
+        },
+        MuiTable: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#1e1e1e', // Fondo de la tabla
+                }
+            }
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    color: '#cacaca',
+                    borderBottom: '1px solid #494949'
+                }
+            }
+        },
+        MuiTableRow: {
+            styleOverrides: {
+                root: {
+                    borderRadius: '10px',
+                    backgroundColor: '#3b3b3b66',
+                    border: '1.5px solid #505050',
+                    '&:nth-of-type(odd)': {
+                        backgroundColor: '#ee07070', // Fondo para filas impares
+                    },
+                    '&:nth-of-type(even)': {
+                        backgroundColor: '#71f3070', // Fondo para filas pares
+                    },
+                }
+            }
         }
 
     },

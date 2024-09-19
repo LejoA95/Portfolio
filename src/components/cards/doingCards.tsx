@@ -1,11 +1,12 @@
 import { Typography, Box, Button } from "@mui/material";
+import { ReactNode } from 'react';
 import Grid from '@mui/material/Grid2';
 import { FC, useState } from 'react';
 import { CSSProperties } from 'react';
 
 interface DoingCardProps {
     title: string;
-    Icon: React.ElementType;
+    Icon: ReactNode;
     description: string;
     titleReverse: string;
     descriptionReverse: string;
@@ -69,11 +70,11 @@ const DoingCard: FC<DoingCardProps> = ({ title, Icon, description, titleReverse,
             <Grid container wrap="nowrap" style={intoCardStyle}>
                 <Grid container spacing={1} wrap="nowrap" style={frontCardStyle}>
                     <Grid size={12} sx={{ display: 'flex', alignItems: 'center', gap: '.5em' }}>
-                        <Icon />
+                        {Icon}
                         <Typography variant='body1' fontSize={18} fontWeight={700} component='h3' sx={{ display: 'inline-block' }}>{title}</Typography>
                     </Grid>
                     <Grid size={12} sx={{ maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative', gap: '.5em', height: '100%' }}>
-                        <Typography variant="body2" sx={{ whiteSpace: 'normal' }}>{description}</Typography>
+                        <Typography variant="body2" sx={{ whiteSpace: 'normal' }} color='#cacaca'>{description}</Typography>
                         <Button type='button' onClick={handleClick} sx={{ textTransform: 'none', padding: '0', position: 'absolute', bottom: '0', right: '0' }}>
                             <Typography variant="body2" color="#ffb300">Ver más</Typography>
                         </Button>
@@ -81,11 +82,11 @@ const DoingCard: FC<DoingCardProps> = ({ title, Icon, description, titleReverse,
                 </Grid>
                 <Grid container spacing={1} wrap="nowrap" style={backCardStyle}>
                     <Grid size={12} sx={{ display: 'flex', alignItems: 'center', gap: '.5em' }}>
-                        <Icon />
+                        {Icon}
                         <Typography variant='body1' fontSize={18} fontWeight={700} component='h3' sx={{ display: 'inline-block' }}>{titleReverse}</Typography>
                     </Grid>
                     <Grid size={12} sx={{ maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative', gap: '.5em', height: '100%' }}>
-                        <Typography variant="body2">{descriptionReverse}</Typography>
+                        <Typography variant="body2" color='#cacaca'>{descriptionReverse}</Typography>
                         <Button type='button' onClick={handleClick} sx={{ textTransform: 'none', padding: '0', position: 'absolute', bottom: '0', right: '0' }}>
                             <Typography variant="body2" color="#ffb300">Volver</Typography>
                         </Button>

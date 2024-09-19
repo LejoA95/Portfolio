@@ -5,6 +5,7 @@ import styled from "styled-components";
 const ContainerCard = styled(Box)`
     background-color: #3b3b3b66;
     border: 1.5px solid #505050;
+    overflow: hidden;
     padding: 3em 1em 1em;
     position: relative;
     border-radius: 8px;
@@ -25,12 +26,8 @@ export function LayoutCard({
     );
 }
 
+
 const ContainerDoingCard = styled(Box)`
-    /* background-color: #3b3b3b66;
-    border: 1.5px solid #505050; */
-    /* padding: .8em; */
-    /* position: relative; */
-    /* border-radius: 8px; */
     width: 100%;
     height: 100px;
     perspective: 1000px;

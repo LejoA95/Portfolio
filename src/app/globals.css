@@ -11,8 +11,8 @@
 }
 
 body {
-  height: 100vh;
   background: var(--fondo);
+  padding: 2em 0;
   color: var(--colorText);
   text-decoration: none;
 }

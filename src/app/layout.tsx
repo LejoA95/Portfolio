@@ -21,8 +21,8 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={responsiveTheme}>
           <Container maxWidth='lg'>
-            <Grid container sx={{ mt: 4 }} spacing={2}>
-              <Grid size={4}>
+            <Grid container  spacing={2}>
+              <Grid size={4} height='100vh'>
                 <HeaderCard />
               </Grid>
               <Grid size={8}>

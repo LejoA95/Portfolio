@@ -1,6 +1,6 @@
 import { MdOutlineEmail, MdWhatsapp } from "react-icons/md";
 import { TbBrandLinkedin } from "react-icons/tb";
-import { LuGithub } from "react-icons/lu";
+import { LuGithub, LuBookOpen } from "react-icons/lu";
 import { LiaFacebookSquare, LiaInstagram } from "react-icons/lia";
 import { FaXTwitter } from "react-icons/fa6";
 import LinkIcon from '@mui/icons-material/Link';
@@ -8,6 +8,10 @@ import { CgWebsite } from "react-icons/cg";
 import { GoDatabase } from "react-icons/go";
 import { FaCode } from "react-icons/fa";
 import { FiPenTool } from "react-icons/fi";
+import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
+import { MdOutlineWorkOutline } from "react-icons/md";
+
+
 function EmailsIcon() {
     return (
         <MdOutlineEmail fontSize="24px" color='#ffb300' />
@@ -82,6 +86,28 @@ function VisualIcon() {
     );
 }
 
+// summary cv
+
+function PointIcon() {
+    return (
+        <VscDebugBreakpointDataUnverified fontSize="25px" fontWeight='100' color='#ffb300' />
+    );
+}
+
+function StudyIcon() {
+    return (
+        <LuBookOpen fontSize="20px" fontWeight='100' color='#ffb300' />
+    );
+}
+
+function WorkIcon() {
+    return (
+        <MdOutlineWorkOutline fontSize="20px" fontWeight='100' color='#ffb300' />
+    );
+}
 
 
-export { EmailsIcon, PhoneIcon, PortfolioIcon, GitIcon, FbIcon, XIcon, IgIcon, LinksIcon, DesignIcon, CodeIcon, ApiIcon, VisualIcon };
+
+
+
+export { EmailsIcon, PhoneIcon, PortfolioIcon, GitIcon, FbIcon, XIcon, IgIcon, LinksIcon, DesignIcon, CodeIcon, ApiIcon, VisualIcon, PointIcon, StudyIcon, WorkIcon };
